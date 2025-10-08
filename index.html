@@ -8,6 +8,41 @@
     <title>Library</title>
 </head>
 <body>
-    
+    <div>
+        <dialog>
+            <h3>Add a Book!</h3>
+            <form>
+                <div>
+                    <label class="text-input">
+                        <span>Book Title</span>
+                        <input type="text">
+                    </label>
+                </div>
+                <div>
+                    <label class="text-input">
+                        <span>Book Author</span>
+                        <input type="text">
+                    </label>
+                </div>
+                <div>
+                    <label class="text-input">
+                        <span>Number of Pages in Book</span>
+                        <input type="number">
+                    </label>
+                </div>
+                <div id="radio-input">
+                    <span>Book Read:</span>
+                    <div>
+                        <input type="radio" name="book_read">
+                        <label>Have read</label>
+                        <input type="radio" name="book_read">
+                        <label>Not read yet</label>
+                    </div>
+                </div>
+            </form>
+            <button autofocus id="add-book">Add Book</button>
+        </dialog>
+        <button>Add a Book!</button>
+    </div>
 </body>
 </html>

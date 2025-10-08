@@ -27,3 +27,17 @@ function displayEachBook() {
         console.log(book)
     })
 }
+
+const dialog = document.querySelector('dialog')
+const showButton = document.querySelector('dialog + button')
+const closeButton = document.querySelector('dialog button')
+
+// open 'add a book' modal
+showButton.addEventListener('click', () => {
+    dialog.showModal()
+})
+
+// submit modal
+close.addEventListener('click', () => {
+    dialog.close()
+})

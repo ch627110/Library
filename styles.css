@@ -1,0 +1,10 @@
+.text-input, #radio-input {    
+    display: flex;
+    justify-content: space-between;
+}
+
+dialog {
+    width: 19vw;
+    border-radius: 0.5em;
+    padding: 2em;
+}
