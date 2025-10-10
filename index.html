@@ -16,36 +16,36 @@
             <h3>Add a Book!</h3>
             <form>
                 <div>
-                    <label class="text-input">
+                    <label for="book-title-input" class="text-input">
                         <span>Book Title</span>
-                        <input type="text">
+                        <input type="text" id="book-title-input" required>
                     </label>
                 </div>
                 <div>
-                    <label class="text-input">
+                    <label for="book-author-input" class="text-input">
                         <span>Book Author</span>
-                        <input type="text">
+                        <input type="text" id="book-author-input" required>
                     </label>
                 </div>
                 <div>
-                    <label class="text-input">
+                    <label for="book-pages-input" class="text-input">
                         <span>Number of Pages in Book</span>
-                        <input type="number">
+                        <input type="number" id="book-pages-input" required>
                     </label>
                 </div>
                 <div id="radio-input">
                     <span>Book Read:</span>
                     <div>
-                        <input type="radio" name="book_read">
-                        <label>Have read</label>
-                        <input type="radio" name="book_read">
-                        <label>Not read yet</label>
+                        <input type="radio" id="read" name="book_read" value="read" required>
+                        <label for="read">Have read</label>
+                        <input type="radio" id="not-read" name="book_read" value="not-read">
+                        <label for="not-read">Not read yet</label>
                     </div>
                 </div>
+                <input type="submit" value="Add Book" id="add-book">
             </form>
-            <button autofocus id="add-book">Add Book</button>
         </dialog>
-        <button>Add a Book!</button>
+        <button id="open-dialog">Add a Book!</button>
     </div>
 </body>
 </html>

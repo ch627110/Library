@@ -58,11 +58,24 @@ function display() {
     })
 }
 
-const dialog = document.querySelector('dialog')
-const showButton = document.querySelector('dialog + button')
-const closeButton = document.querySelector('dialog button')
+(() => {
+    const form = document.querySelector('form')
+    const dialog = document.querySelector('dialog')
+    const showDialog = document.querySelector('#open-dialog')
+    const submitDialog = document.querySelector('#add-book')
 
-// open 'add a book' modal
-showButton.addEventListener('click', () => {
-    dialog.showModal()
-});
+    const title = document.getElementById('book-title-input')
+    const author = document.getElementById('book-author-input')
+    const pages = document.getElementById('book-pages-input')
+    const read = document.getElementById('book-read-input')
+
+    // open 'add a book' modal
+    showDialog.addEventListener('click', () => {
+        dialog.showModal()
+    })
+
+    // when the form is submitted...
+    form.addEventListener('submit', (event) => {
+        
+    })
+})()
