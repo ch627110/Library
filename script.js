@@ -1,4 +1,5 @@
 const myLibrary = [];
+const default_container = document.getElementById('books-container').innerHTML
 
 function Book(title, author, numPages, haveRead) {
     // the constructor
@@ -10,13 +11,6 @@ function Book(title, author, numPages, haveRead) {
     this.author = author;
     this.numPages = numPages;
     this.haveRead = haveRead;
-    this.displayBook = function() {
-        console.log('Book ID: '+this.id)
-        console.log('Book Title: '+this.title)
-        console.log('Book Author: '+this.author)
-        console.log('Number of Pages: '+this.numPages)   
-        console.log('Read Book: '+this.haveRead)        
-    }
 }
 
 function addBook(title, author, numPages, haveRead) { 
@@ -59,23 +53,31 @@ function display() {
 }
 
 (() => {
-    const form = document.querySelector('form')
-    const dialog = document.querySelector('dialog')
     const showDialog = document.querySelector('#open-dialog')
-    const submitDialog = document.querySelector('#add-book')
-
-    const title = document.getElementById('book-title-input')
-    const author = document.getElementById('book-author-input')
-    const pages = document.getElementById('book-pages-input')
-    const read = document.getElementById('book-read-input')
-
+    const dialog = document.querySelector('dialog')
+    
     // open 'add a book' modal
     showDialog.addEventListener('click', () => {
         dialog.showModal()
     })
 
+    const form = document.querySelector('form')
+    const books_container = document.querySelector('#books-container')
+    
     // when the form is submitted...
     form.addEventListener('submit', (event) => {
+        event.preventDefault()
+        dialog.close()
+
+        const title = document.getElementById('book-title-input')
+        const author = document.getElementById('book-author-input')
+        const pages = document.getElementById('book-pages-input')
+        const read = document.getElementById('book-read-input')
+        addBook(title.value, author.value, pages.value, read)
         
+        form.reset()
+
+        books_container.innerHTML = default_container
+        display()
     })
 })()
