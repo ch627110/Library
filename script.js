@@ -11,6 +11,7 @@ function Book(title, author, numPages, haveRead) {
     this.author = author;
     this.numPages = numPages;
     this.haveRead = haveRead;
+    // prototype function to toggle read status
     this.toggleReadStatus = function() {
         this.haveRead = this.haveRead ? false : true
         refresh()
@@ -41,7 +42,8 @@ function addBook(title, author, numPages, haveRead) {
 })();
 
 function removeBook(book_remove) {
-    return myLibrary.filter((book) => book.id != book_remove.id)
+    // delete the entire array, replace it with its filtered copy
+    myLibrary.splice(0, myLibrary.length, ...myLibrary.filter((book) => book.id != book_remove.id))
 }
 
 function display() {
@@ -49,6 +51,7 @@ function display() {
     myLibrary.forEach((book) => {
         const book_div = document.createElement('div')
         book_div.classList.add('book-div')
+        // book_div.setAttribute('data-UUID', book.id)
 
         const book_div_title = document.createElement('p')
         const book_div_pages = document.createElement('p')
@@ -67,6 +70,10 @@ function display() {
         })
 
         remove_button.textContent = 'Remove book'
+        remove_button.addEventListener('click', () => {
+            removeBook(book)
+            refresh()
+        })
         
         book_div.appendChild(book_div_title)
         book_div.appendChild(book_div_pages)
