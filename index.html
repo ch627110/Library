@@ -4,48 +4,54 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="styles.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Michroma&display=swap" rel="stylesheet">
     <script src="script.js" defer></script>
     <title>Library</title>
 </head>
 <body>
     <div>
-        <div id="books-container">
-            <h2>Books</h2>
+        <div id="header">
+            <h2>
+                <span>My Library</span>
+                <button id="open-dialog">Add a Book!</button>
+            </h2>
         </div>
+        <div id="books-container"></div>
         <dialog>
             <h3>Add a Book!</h3>
             <form>
                 <div>
                     <label for="book-title-input" class="text-input">
-                        <span>Book Title</span>
-                        <input type="text" id="book-title-input" required>
+                        <!-- <div>Book Title</div> -->
+                        <input type="text" id="book-title-input" required
+                        placeholder="Title">
                     </label>
                 </div>
                 <div>
                     <label for="book-author-input" class="text-input">
-                        <span>Book Author</span>
-                        <input type="text" id="book-author-input" required>
+                        <!-- <div>Book Author</div> -->
+                        <input type="text" id="book-author-input" required
+                        placeholder="Author">
                     </label>
                 </div>
                 <div>
                     <label for="book-pages-input" class="text-input">
-                        <span>Number of Pages in Book</span>
-                        <input type="number" id="book-pages-input" required>
+                        <!-- <div>Number of Pages in Book</div> -->
+                        <input type="number" id="book-pages-input" required
+                        placeholder="Number of Pages">
                     </label>
                 </div>
                 <div id="radio-input">
-                    <span>Book Read:</span>
-                    <div>
-                        <input type="radio" id="read" name="book_read" value="read" required>
-                        <label for="read">Have read</label>
-                        <input type="radio" id="not-read" name="book_read" value="not-read">
-                        <label for="not-read">Not read yet</label>
-                    </div>
+                    <label for="readStatus">
+                        <span>Mark as Completed?</span>
+                        <input type="checkbox" id="readStatus" name="read_status">
+                    </label>
                 </div>
                 <input type="submit" value="Add Book" id="add-book">
             </form>
         </dialog>
-        <button id="open-dialog">Add a Book!</button>
     </div>
 </body>
 </html>
